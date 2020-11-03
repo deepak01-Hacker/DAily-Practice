@@ -18,7 +18,7 @@ def BooyerMoore(pat,text):
             print(i,i+m)
             i += m
         else:
-            i += badchar[ord(text[i+m])]
+            i += badchar[ord(text[i+j])]
 
 
 if __name__ == "__main__":
