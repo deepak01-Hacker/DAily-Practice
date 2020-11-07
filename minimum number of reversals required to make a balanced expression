@@ -1,0 +1,21 @@
+def count(st):
+    if len(st)%2 == 1:
+        return -1
+    stack = 0
+    ans = 0
+    for i in st:
+        if i == "}":
+            stack -= 1
+        else:
+            stack += 1
+        if stack == -1:
+            ans += 1
+            stack = 1
+    return (ans+stack//2)
+
+if __name__ == "__main__":
+    for _ in range(int(input())):
+        st = input()
+        print(count(st))
+        
+        
