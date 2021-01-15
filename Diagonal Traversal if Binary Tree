@@ -1,0 +1,20 @@
+def diagonalHelp(root,mp,Hd):
+    if root is None:
+        return 
+    try:
+        mp[Hd].append(root.data)
+    except:
+        mp[Hd] = []
+        mp[Hd].append(root.data)
+    diagonalHelp(root.left,mp,Hd-1)
+    diagonalHelp(root.right,mp,Hd)
+
+def diagonalTraversal(root):
+    if root is None:
+        return []
+    result = []
+    mp = {}
+    diagonalHelp(root,mp,0)
+    for Hd in sorted(mp,reverse=True):
+        result += mp[Hd]
+    return result
